@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The problem of print | 了了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在http://davidshariff.com/js-quiz上看到一些比较有意思的输出结果题,决定总结一下。js的各种小知识总是把人绕晕，慢慢来剖析一下。
+问题一1234var foo = function foo() &amp;#123;	console.log(foo === foo);&amp;#125;;foo();
+答案:true分析:foo是分配给函数的变量，foo的类型是function，由于这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The problem of print">
+<meta property="og:url" content="http://yoursite.com/2015/03/10/problemOfJsPrint/index.html">
+<meta property="og:site_name" content="了了">
+<meta property="og:description" content="在http://davidshariff.com/js-quiz上看到一些比较有意思的输出结果题,决定总结一下。js的各种小知识总是把人绕晕，慢慢来剖析一下。
+问题一1234var foo = function foo() &amp;#123;	console.log(foo === foo);&amp;#125;;foo();
+答案:true分析:foo是分配给函数的变量，foo的类型是function，由于这">
+<meta property="og:updated_time" content="2015-11-07T03:48:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The problem of print">
+<meta name="twitter:description" content="在http://davidshariff.com/js-quiz上看到一些比较有意思的输出结果题,决定总结一下。js的各种小知识总是把人绕晕，慢慢来剖析一下。
+问题一1234var foo = function foo() &amp;#123;	console.log(foo === foo);&amp;#125;;foo();
+答案:true分析:foo是分配给函数的变量，foo的类型是function，由于这">
+  
+    <link rel="alternative" href="/atom.xml" title="了了" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">了了</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">清醒时写码，心塞时跑步，糊涂时读书。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-problemOfJsPrint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      The problem of print
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-03-10T11:11:23.000Z" itemprop="datePublished">03-10-2015</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在<a href="http://davidshariff.com/js-quiz" target="_blank" rel="external">http://davidshariff.com/js-quiz</a>上看到一些比较有意思的输出结果题,决定总结一下。<br>js的各种小知识总是把人绕晕，慢慢来剖析一下。</p>
+<h2 id="问题一">问题一</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(foo === foo);</span><br><span class="line">&#125;;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p>答案:<code>true</code><br>分析:foo是分配给函数的变量，foo的类型是function，由于这是一个函数直接量，所以函数名本身是完全不相关的。<br>所以<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="title">sb</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo === foo);</span><br><span class="line">&#125;;</span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo === foo);</span><br><span class="line">&#125;;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure></p>
+<p>都是一样的<br><a id="more"></a></p>
+<hr>
+<h2 id="问题二">问题二</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">    &#123;</span><br><span class="line">        test: <span class="number">1</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> aaa());</span><br></pre></td></tr></table></figure>
+<p>答案：<code>undefined</code><br>分析：这理论上应该返回一个object，但其实js会解析成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aaa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    &#123;</span><br><span class="line">        test: <span class="number">1</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>自动补全分号，所以说：一定要写分号</p>
+<hr>
+<h2 id="问题三">问题三</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>(<span class="string">"1"</span>) - <span class="number">1</span> == <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>答案：<code>true</code><br>分析：Number()函数的规则：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th style="text-align:right">转换规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td style="text-align:right">true-&gt;1,false-&gt;0</td>
+</tr>
+<tr>
+<td>Number</td>
+<td style="text-align:right">简单的传入传出</td>
+</tr>
+<tr>
+<td>null</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td style="text-align:right">NaN</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align:right">只含有数字（无论正负号，浮点，进制），都转换成十进制整数值，空转换为0，其他字符转为NaN</td>
+</tr>
+</tbody>
+</table>
+<p>由于Number()函数在转换字符串时比较复杂而且不够合理，因此处理整数的时候更常用的是parseInt()函数，parseInt()函数在转换字符时，更多的是看其是否符合数值模式。它会忽略字符串前面的空格，一直解析所有字符或者遇到了一个非数字字符。</p>
+<hr>
+<h2 id="问题四">问题四</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="literal">true</span> + <span class="literal">false</span>) &gt; <span class="number">2</span> + <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>false</code><br>分析:要知道Boolean类型的转换规则</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th style="text-align:right">转换为true的值</th>
+<th style="text-align:center">转换为false的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td style="text-align:right">true</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align:right">任何非空字符串</td>
+<td style="text-align:center">“”（空字符串）</td>
+</tr>
+<tr>
+<td>Number</td>
+<td style="text-align:right">任何非零数字值(包括无穷大)</td>
+<td style="text-align:center">0和NaN</td>
+</tr>
+<tr>
+<td>Obeject</td>
+<td style="text-align:right">任何对象</td>
+<td style="text-align:center">null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td style="text-align:right">–</td>
+<td style="text-align:center">undefined</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="问题五">问题五</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> foo;</span><br><span class="line">    foo = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'11'</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> bar());</span><br></pre></td></tr></table></figure>
+<p>答案:<code>function</code><br>分析:首先最容易的部分：return立即返回。这意味着return语句下的一切永远不会执行正确的？<br>其实不是的，还考察函数声明方式的差异</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">函数定义的方式</th>
+<th style="text-align:center">function语句</th>
+<th style="text-align:center">Function构造函数</th>
+<th style="text-align:center">函数直接量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">例子</td>
+<td style="text-align:center">function eg(a,b){return a+b}</td>
+<td style="text-align:center">var eg = new Function(“a”,”b”,”return a+b”)</td>
+<td style="text-align:center">var eg =function(a,b){return a+b}</td>
+</tr>
+<tr>
+<td style="text-align:right">兼容</td>
+<td style="text-align:center">完全</td>
+<td style="text-align:center">js1.1以上</td>
+<td style="text-align:center">js1.2以上版本</td>
+</tr>
+<tr>
+<td style="text-align:right">形式</td>
+<td style="text-align:center">句子</td>
+<td style="text-align:center">表达式</td>
+<td style="text-align:center">表达式</td>
+</tr>
+<tr>
+<td style="text-align:right">名称</td>
+<td style="text-align:center">有名</td>
+<td style="text-align:center">匿名</td>
+<td style="text-align:center">匿名</td>
+</tr>
+<tr>
+<td style="text-align:right">性质</td>
+<td style="text-align:center">静态</td>
+<td style="text-align:center">动态</td>
+<td style="text-align:center">静态</td>
+</tr>
+<tr>
+<td style="text-align:right">解析时机</td>
+<td style="text-align:center">优先解析</td>
+<td style="text-align:center">顺序解析</td>
+<td style="text-align:center">顺序解析</td>
+</tr>
+<tr>
+<td style="text-align:right">作用域</td>
+<td style="text-align:center">具有函数的作用域</td>
+<td style="text-align:center">顶级函数(顶级作用域)</td>
+<td style="text-align:center">具有函数作用域</td>
+</tr>
+</tbody>
+</table>
+<p>function foo()优先解析 所以bar()返回foo，typeof foo答案为function<br>那接下来我们来改一下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> foo;</span><br><span class="line">    foo = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'11'</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> bar());</span><br><span class="line"><span class="comment">//undefined 没有了函数声明</span></span><br><span class="line"><span class="comment">//而是被一个函数直接量foo在编译时创建的“未定义”的警告来代替。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//再改！</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">return</span> foo;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'11'</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> bar());</span><br><span class="line"><span class="comment">//number</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">	<span class="keyword">return</span> foo;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'11'</span>;</span><br><span class="line">&#125;</span><br><span class="line">alert(<span class="keyword">typeof</span> bar());</span><br><span class="line"><span class="comment">//number</span></span><br><span class="line"><span class="comment">//很奇怪，为啥是number</span></span><br><span class="line"><span class="comment">//其实在这两种情况下，函数foo虽然是在编译时创建的</span></span><br><span class="line"><span class="comment">//但在执行过程中，我们写在它前面的全局变量foo已经把函数覆盖掉</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> foo = <span class="string">'11'</span>;</span><br><span class="line">	<span class="keyword">return</span> foo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//string</span></span><br><span class="line"><span class="comment">//函数foo再次在编译时创建的，而全局变量foo覆盖它，最后本地变量foo字符串又覆盖了全局变量。</span></span><br><span class="line"><span class="comment">//这个时候再在函数外面alert(foo)会报错哦~</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="问题六">问题六</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> - - <span class="string">"1"</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>2</code><br>分析:一元加和减操作符在对非数值应用时，该操作符会像Number()转型函数一样对这个值执行转换。要注意“-”之间有空格，会被解释成1-(-1),若没有这个空格，会报错。</p>
+<hr>
+<h2 id="问题七">问题七</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    x: <span class="number">2</span>,</span><br><span class="line">    baz: &#123;</span><br><span class="line">        x: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> go = foo.baz.bar;</span><br><span class="line"></span><br><span class="line">alert(go());</span><br><span class="line">alert(foo.baz.bar());</span><br></pre></td></tr></table></figure>
+<p>答案:<code>3,1</code><br>分析:this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。<br>•this对象是在运行时基于函数的执行环境绑定的。在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。<br>•也就是说this关键字总是指代调用者。<br>因此go()的调用者是window,所以alert(go())返回的是3<br>第二个alert()由父对象访问它的实例化功能。由于bar()函数被foo.baz调用，所以关键字this指向foo.baz，而foo.baz.x值为1，最后输出1</p>
+<hr>
+<h2 id="问题八">问题八</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"This is a string"</span>) <span class="keyword">instanceof</span> <span class="built_in">String</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>true</code><br>分析:创建了个新的String对象，当然是String的实例了。</p>
+<p>那么问题来了，new都干啥了？<br>1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>2、属性和方法被加入到 this 引用的对象中。<br>3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</p>
+<p>问题又来了 instanceof 和typeof有啥区别？<br>typeof返回一个表达式的数据类型的字符串，返回结果为js基本的数据类型，<br>包括number,boolean,string,object,undefined,function.语法为typeof(data) 或 typeof data<br>instanceof则为判断一个对象是否为某一数据类型，或一个变量是否为一个对象的实例;返回boolean类型<br>语法为 o instanceof A<br>那。。。<br>window instanceof Object？<br>arguments instanceof Array？？<br>答案当然都为false啦，<br>原谅精神患者思维广-!-</p>
+<hr>
+<h2 id="问题九">问题九</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] + [] + <span class="string">'foo'</span>.split(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>&quot;f,o,o&quot;</code><br>分析:+会把[]转换为””或0，[]+[]会转换成””<br>‘foo’.split(‘’)为[‘f’,’o’,’o’]<br>于是。。问题来啦~为什么 ++[[]][+[]]+[+[]] = 10？这里就不多解释了<br>可以看迷渡的<a href="http://justjavac.com/javascript/2012/05/24/can-you-explain-why-10.html" target="_blank" rel="external">http://justjavac.com/javascript/2012/05/24/can-you-explain-why-10.html</a></p>
+<hr>
+<h2 id="问题十">问题十</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>).toString();</span><br></pre></td></tr></table></figure>
+<p>答案:<code>&quot;,,,,&quot;</code><br>分析:这貌似没啥说的吧，new Array(5)，开辟了长度为5，每项都为空字符串的数组</p>
+<hr>
+<h2 id="问题十一">问题十一</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArr = [<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>];</span><br><span class="line">myArr.length = <span class="number">0</span>;</span><br><span class="line">myArr.push(<span class="string">'bin'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myArr);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>[&#39;bin&#39;]</code><br>分析:设定一个数组的长度小于它的“当前长度”，会截断它。数组的长度设置为0都清空了。</p>
+<hr>
+<h2 id="问题十二">问题十二</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="string">'Hello'</span>) === <span class="string">'Hello'</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>true</code><br>分析:转换为字符串有两种方式</p>
+<ol>
+<li><p>几乎所有值都有的toString()方法<br> 数值、布尔值、对象和字符串都有一个toString()方法，null、undefined值没有这个方法。因此null.toString()和undefined.toString()会报错。</p>
+</li>
+<li><p>转型函数String()<br> 转换规则：<br>  1.如果值有toString()方法，调用该方法并返回相应结果<br>  2.如果值为null，则返回“null”<br>  3.如果值为undefined，则返回“undefined”<br>那么问题来了。。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'Hello'</span>) === <span class="string">'Hello'</span>;<span class="comment">//false，一个object 一个string嘛</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'Hello'</span>) == <span class="string">'Hello'</span>;<span class="comment">//true，啥???</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这就是“===”和“==”的问题了，比如说object-&gt;valueOf()-&gt;toString()-&gt;etc.</p>
+<hr>
+<h2 id="问题十三">问题十三</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    x++;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">return</span> foo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> <span class="keyword">new</span> foo;</span><br><span class="line"><span class="built_in">console</span>.log(bar.x);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>undefined</code><br>分析:这是啥？？？为啥两个new<br>我们可能会想因为两个new所以x会自增到2，其实不是这样。因为foo会返回自己的函数定义。<br>先看看这个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    x++;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo();</span><br><span class="line"><span class="built_in">console</span>.log(bar.x);<span class="comment">//1，没问题吧？有问题？！一个是全局一个是局部啊，少年郎</span></span><br></pre></td></tr></table></figure></p>
+<p>上面打印1是因为这里foo返回的不是一个函数定义。变量bar被赋值{x:1}。<br>回归到原来的问题，foo是一个函数声明返回本身，使得bar.x不确定，<br>因为它是内部的函数foo和返回对象上的不可用的属性。<br>如果bee = new bar;或者bee = new bar();这会报错。</p>
+<hr>
+<h2 id="问题十四">问题十四</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"This is a string"</span> <span class="keyword">instanceof</span> <span class="built_in">String</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>false</code><br>分析:<br>字符串”This is a string’并不包含在String原型的构造里，它不像之前出现的问题。<br>对比感受一下。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">"This is a string"</span> ===<span class="string">"string"</span><span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="问题十五">问题十五</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bar = <span class="number">1</span>,</span><br><span class="line">    foo = &#123;&#125;;</span><br><span class="line">foo: &#123;</span><br><span class="line">    bar: <span class="number">2</span>;</span><br><span class="line">    baz: ++bar;</span><br><span class="line">&#125;;</span><br><span class="line">foo.baz + foo.bar + bar;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>NaN</code><br>分析:传统意义上我们会这么写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bar = <span class="number">1</span>,</span><br><span class="line">    foo = &#123;&#125;;</span><br><span class="line">foo=&#123;</span><br><span class="line">    bar: <span class="number">2</span>，</span><br><span class="line">    baz: ++bar</span><br><span class="line">&#125;;</span><br><span class="line">foo.baz + foo.bar + bar;<span class="comment">//6，这是毫无疑问的</span></span><br></pre></td></tr></table></figure></p>
+<p>我们想想什么时候会用到冒号，1.声明对象的成员2.switch语句分支3.三元表达式<br>如果单独运行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo: &#123;</span><br><span class="line">    bar: <span class="number">2</span>;</span><br><span class="line">    baz: ++bar;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>会报错。而原题并没有报错，这是因为最开始的时候声明了foo为一个{},后来的代码块实际上并没有改变变量foo。<br>因此只是undefined + undefined +1 结果为NaN</p>
+<hr>
+<h2 id="问题十六">问题十六</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArr = [<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>];</span><br><span class="line">myArr[<span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span> <span class="keyword">in</span> myArr);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>true</code><br>分析:数组本身也是Object，尽管本身的原型链不太相同，但是属性的组织结构大致一样。</p>
+<hr>
+<h2 id="问题十七">问题十七</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr[<span class="number">0</span>]  = <span class="string">'a'</span>;</span><br><span class="line">arr[<span class="number">1</span>]  = <span class="string">'b'</span>;</span><br><span class="line">arr.foo = <span class="string">'c'</span>;</span><br><span class="line">alert(arr.length);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>2</code><br>分析:当添加一个foo属性时，只是把属性添加到数组对象上，而不会占有数组对象的整数索引，并没有增加一个索引值。<br>数组仅仅根据他的索引值增加长度，所以长度还是为2</p>
+<hr>
+<h2 id="问题十八">问题十八</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> &gt; <span class="number">9</span> &gt; <span class="number">8</span> === <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>false</code><br>分析:作为一个人，可能会理解为(10&gt;9)&amp;&amp;(9&gt;8)答案当然为true；<br>但是作为Js,它会理解为(10&gt;9)&gt;8，显而易见 true&gt;8，根据Number()转换规则，1&gt;8。剩下就不用多说了。</p>
+<hr>
+<h2 id="问题十九">问题十九</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">arguments</span>[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    alert(b);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>答案:<code>undefined</code><br>分析:考察函数的参数<br>•函数的参数：arguments对象<br>    arguments是表示函数的实际参数(与形参无关)，因此b仍然为undefined。<br>•callee函数（回调函数属性）<br>     arguments对象的 callee属性：返回arguments对象所属的函数的引用，这相当于在自己的内部调用自己。<br>     arguments.cellee.length == arguments.length;<br>注：与caller区分，caller:functionName.caller 返回调用者。<br>js的参数数组可以是任意大小，并且所有的参数捆绑到arguments对象，但这并不意味着可以单独定义为捆绑的参数。<br>同样的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">arguments</span>[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    alert(b);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>这个问题的答案就是2了。</p>
+<hr>
+<h2 id="问题二十">问题二十</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>;</span><br></pre></td></tr></table></figure>
+<p>答案:<code>false</code><br>分析:这个就不用做过多解释了，NaN,即not a number，本身不等于本身<br>isNaN()函数：不能返回数值时返回true。在对object类型进行验证时，先调用对象的valueOf()方法，然后确定该方法返回的值是否可以转换为数值。如果不能，则基于这个返回值再调用toString()方法，再测试返回值。</p>
+<p>最后的福利：<br>英语版本：<a href="http://www.ecma-international.org/ecma-262/5.1/" target="_blank" rel="external">http://www.ecma-international.org/ecma-262/5.1/</a></p>
+<p>就知道英语不好↓ ↓ ↓ 颜海镜这里有中文版<br><a href="http://yanhaijing.com/es5" target="_blank" rel="external">http://yanhaijing.com/es5</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/10/problemOfJsPrint/" data-id="cii2xlg0o000682k4ckt1eck4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/12/httpStatus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          http Status
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 llfly<br>
+      <a href="https://github.com/steven5538/hexo-theme-athena" target="_blank">Athena</a> by <a href="http://steven5538.tw" target="_blank">Steven5538</a> | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

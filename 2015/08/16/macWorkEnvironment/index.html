@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mac Work Environment | 了了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mac下常用工具整理
+sublime text3下载sublime
+package control安装package control插件功能：安装包管理安装：打开Sublime，按下Control + (Mac)或者Ctrl +(Windows)，然后粘贴上下面的代码：
+1import urllib.request,os; pf = &apos;Package Control.sublime-package">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac Work Environment">
+<meta property="og:url" content="http://yoursite.com/2015/08/16/macWorkEnvironment/index.html">
+<meta property="og:site_name" content="了了">
+<meta property="og:description" content="mac下常用工具整理
+sublime text3下载sublime
+package control安装package control插件功能：安装包管理安装：打开Sublime，按下Control + (Mac)或者Ctrl +(Windows)，然后粘贴上下面的代码：
+1import urllib.request,os; pf = &apos;Package Control.sublime-package">
+<meta property="og:updated_time" content="2015-11-16T14:45:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac Work Environment">
+<meta name="twitter:description" content="mac下常用工具整理
+sublime text3下载sublime
+package control安装package control插件功能：安装包管理安装：打开Sublime，按下Control + (Mac)或者Ctrl +(Windows)，然后粘贴上下面的代码：
+1import urllib.request,os; pf = &apos;Package Control.sublime-package">
+  
+    <link rel="alternative" href="/atom.xml" title="了了" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">了了</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">清醒时写码，心塞时跑步，糊涂时读书。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-macWorkEnvironment" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac Work Environment
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-08-16T09:57:12.000Z" itemprop="datePublished">08-16-2015</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Environment/">Environment</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mac下常用工具整理</p>
+<h3 id="sublime_text3">sublime text3</h3><h4 id="下载">下载</h4><p><a href="http://www.sublimetext.com/3" target="_blank" rel="external">sublime</a></p>
+<h4 id="package_control">package control</h4><p>安装package control插件<br>功能：安装包管理<br>安装：打开Sublime，按下Control + <code>(Mac)或者Ctrl +</code>(Windows)，然后粘贴上下面的代码：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="Emmet">Emmet</h4><p>功能：编码快捷键，前端必备<br>使用：<br><a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">教程1</a><br><a href="http://peters-playground.com/Emmet-Css-Snippets-for-Sublime-Text-2/" target="_blank" rel="external">教程2</a></p>
+<h4 id="JSFormat">JSFormat</h4><p>功能：Javascript的代码格式化插件<br>使用：在已压缩的JS文件中，右键选择jsFormat或者使用默认快捷键（Ctrl+Alt+F）</p>
+<h4 id="ConvertToUTF8">ConvertToUTF8</h4><p>功能：文件转码成utf-8<br>使用：安装插件后自动转换为utf-8格式</p>
+<h4 id="AutoFileName">AutoFileName</h4><p>功能：快捷输入文件名<br>简介：自动完成文件名的输入，如图片选取<br>使用：输入”/”即可看到相对于本项目文件夹的其他文件</p>
+<h4 id="Trailing_spaces">Trailing spaces</h4><p>功能：检测并一键去除代码中多余的空格<br>使用：安装插件并重启，即可自动提示多余空格。一键删除多余空格：CTRL+SHITF+T（需配置），更多配置请点击标题。快捷键配置：在Preferences / Key Bindings – User加上代码（数组内）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"ctrl+shift+t"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"delete_trailing_spaces"</span> </span>&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="SideBarEnhancements">SideBarEnhancements</h4><p>功能：增强左侧功能菜单<br>使用：类似于NERDTree,文件树增强,在左侧的文件树上增加各种功能菜单<br>按F1~F5分别在chrome，firefox，IE，sogou浏览器预览效果，也可以自定义快捷键，代码中的浏览器路径要以自己电脑里的文件路径为准。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"ctrl+shift+c"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"copy_path"</span> </span>&#125;,</span><br><span class="line">//chrome</span><br><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"f1"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"side_bar_files_open_with"</span></span>,</span><br><span class="line">"<span class="attribute">args</span>": <span class="value">&#123;</span><br><span class="line">"<span class="attribute">paths</span>": <span class="value">[]</span>,</span><br><span class="line">"<span class="attribute">application</span>": <span class="value"><span class="string">"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"</span></span>,</span><br><span class="line">"<span class="attribute">extensions</span>":<span class="value"><span class="string">".*"</span> //匹配任何文件类型</span><br><span class="line"></span>&#125;</span><br><span class="line"></span>&#125;,</span><br><span class="line">//firefox</span><br><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"f2"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"side_bar_files_open_with"</span></span>,</span><br><span class="line">"<span class="attribute">args</span>": <span class="value">&#123;</span><br><span class="line">"<span class="attribute">paths</span>": <span class="value">[]</span>,</span><br><span class="line">"<span class="attribute">application</span>": <span class="value"><span class="string">"D:\\Program Files\\firefox\\firefox.exe"</span></span>,</span><br><span class="line">"<span class="attribute">extensions</span>":<span class="value"><span class="string">".*"</span></span><br><span class="line"></span>&#125;</span><br><span class="line"></span>&#125;,</span><br><span class="line">//ie</span><br><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"f3"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"side_bar_files_open_with"</span></span>,</span><br><span class="line">"<span class="attribute">args</span>": <span class="value">&#123;</span><br><span class="line">"<span class="attribute">paths</span>": <span class="value">[]</span>,</span><br><span class="line">"<span class="attribute">application</span>": <span class="value"><span class="string">"C:\\Program Files\\Internet Explorer\\iexplore.exe"</span></span>,</span><br><span class="line">"<span class="attribute">extensions</span>":<span class="value"><span class="string">".*"</span></span><br><span class="line"></span>&#125;</span><br><span class="line"></span>&#125;,</span><br><span class="line">//sogou</span><br><span class="line">&#123; "<span class="attribute">keys</span>": <span class="value">[<span class="string">"f4"</span>]</span>, "<span class="attribute">command</span>": <span class="value"><span class="string">"side_bar_files_open_with"</span></span>,</span><br><span class="line">"<span class="attribute">args</span>": <span class="value">&#123;</span><br><span class="line">"<span class="attribute">paths</span>": <span class="value">[]</span>,</span><br><span class="line">"<span class="attribute">application</span>": <span class="value"><span class="string">"D:\\Program Files\\SogouExplorer\\SogouExplorer.exe"</span></span>,</span><br><span class="line">"<span class="attribute">extensions</span>":<span class="value"><span class="string">".*"</span></span><br><span class="line"></span>&#125;</span><br><span class="line"></span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="Bracket_Highlighter">Bracket Highlighter</h4><p>功能：代码匹配<br>使用：可匹配[], (), {}, “”, ”, <tag></tag>，高亮标记，可以查看起始和结束标记</p>
+<h4 id="Doc​Blockr">Doc​Blockr</h4><p>功能：生成优美注释<br>使用：输入/<em>、/*</em>然后回车，还有很多用法，<a href="https://packagecontrol.io/packages/DocBlockr" target="_blank" rel="external">参照</a></p>
+<h4 id="Markdown_Editing">Markdown Editing</h4><p>功能：使用sublime编辑markdown，拥有更好的语法理解和良好的配色方案。<br>使用：安装即使用</p>
+<h4 id="Pretty_JSON">Pretty JSON</h4><p>功能: json强化<br>使用： ctrl+alt+j 格式化json字符串 ctrl+alt+m 压缩json字符串</p>
+<h4 id="Tag">Tag</h4><p>功能：HTML代码格式化<br>使用：选中一段html代码，按Ctrl+Alt+f即可。</p>
+<h4 id="SublimeTmpl">SublimeTmpl</h4><p>功能： 新建文件的模板<br>使用：<br>默认快捷键:<br>ctrl+alt+h html<br>ctrl+alt+j javascript<br>ctrl+alt+c css<br>ctrl+alt+p php<br>ctrl+alt+r ruby<br>ctrl+alt++shift+p python<br>可自定义</p>
+<h4 id="CSScomb">CSScomb</h4><p>功能：CSS属性排序<br>使用：选中要排序的CSS代码，按Ctrl+Shift+C，即可对CSS属性重新排序了，如果不选代码则插件将排序文件中所有的CSS属性。</p>
+<h4 id="SublimeCodeIntel">SublimeCodeIntel</h4><p>功能：自定义函数跳转<br>使用：按住alt+鼠标左键，可以实现自定义函数之间的跳转，方便查找和修改函数内容和读写代码。</p>
+<h3 id="git">git</h3><p>两种方式使用xCode或者Homebrew</p>
+<h4 id="xCode">xCode</h4><p>在App Store中下载安装即可</p>
+<h4 id="Homebrew">Homebrew</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装git">安装git</h4><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>install git</span><br></pre></td></tr></table></figure>
+<h3 id="Virtualbox">Virtualbox</h3><p>虚拟机软件来管理虚拟机Virtualbox, Vmware Fusion, Parallel Desktop等，其中最方便的是VirtualBox，所以我选择了Virtualbox。<br><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">下载地址</a></p>
+<h4 id="centos">centos</h4><p>本人安装的是centos7<br><a href="https://www.centos.org/download/" target="_blank" rel="external">下载地址</a><br>在虚拟机中安装，分配4g内存，25g存储空间<br>安装之后输入用户名，密码登陆。</p>
+<h5 id="sudo权限">sudo权限</h5><p>使用sudo命令时发现</p>
+<blockquote>
+<p>user is not in the sudoers files.This incident will be reported.</p>
+</blockquote>
+<p>先通过su命令切换到root权限，于是想到修改权限</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sudoers</span><br><span class="line"></span><br><span class="line"><span class="comment">#相关vim操作</span></span><br><span class="line">/root <span class="comment">#查找root</span></span><br><span class="line">n <span class="comment">#查找下一个</span></span><br><span class="line">yy <span class="comment">#复制当前行</span></span><br><span class="line">p <span class="comment">#粘贴</span></span><br><span class="line"><span class="comment"># 将root 改为用户名</span></span><br><span class="line"><span class="symbol">:wq</span> <span class="comment">#居然没法保存～～～</span></span><br></pre></td></tr></table></figure>
+<p>于是相当了文件读写权限的问题 </p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ll -<span class="operator">a</span> /etc/sudoers <span class="comment">#查看文件读写权限</span></span><br><span class="line">chmod <span class="operator">a</span>+w /etc/sudoers <span class="comment">#所有用户都加上写权限 a,u,g</span></span><br><span class="line"><span class="comment">#重复上面修改</span></span><br><span class="line">chmod <span class="operator">a</span>-w /etc/sudoers <span class="comment">#再把权限去掉</span></span><br></pre></td></tr></table></figure>
+<p>关于sudo可以参考：<a href="http://www.osedu.net/article/linux/2011-01-03/178.html" target="_blank" rel="external">http://www.osedu.net/article/linux/2011-01-03/178.html</a></p>
+<h5 id="网卡">网卡</h5><p>已经有权限了，就该装软件了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">ping</span> <span class="tag">baidu</span><span class="class">.com</span></span><br><span class="line"><span class="tag">ping</span><span class="pseudo">:unknown</span> <span class="tag">host</span> <span class="tag">baidu</span><span class="class">.com</span></span><br></pre></td></tr></table></figure>
+<p>发现根本木有网</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0  </span><br><span class="line"></span><br><span class="line">DEVICE=eth0                                  <span class="preprocessor">#物理设备名</span></span><br><span class="line">IPADDR=<span class="number">192.168</span><span class="number">.1</span><span class="number">.100</span>                <span class="preprocessor">#IP地址</span></span><br><span class="line">NETMASK=<span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span>            <span class="preprocessor">#掩码值</span></span><br><span class="line">NETWORK=<span class="number">192.168</span><span class="number">.1</span><span class="number">.0</span>               <span class="preprocessor">#网络地址(可不要)</span></span><br><span class="line">BROADCAST=<span class="number">192.168</span><span class="number">.1</span><span class="number">.255</span>      <span class="preprocessor">#广播地址（可不要）</span></span><br><span class="line">GATEWAY=<span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span>                 <span class="preprocessor">#网关地址</span></span><br><span class="line">ONBOOT=yes                      <span class="preprocessor"># [yes|no]（引导时是否激活设备）no改为yes</span></span><br><span class="line">USERCTL=no                <span class="preprocessor">#[yes|no]（非root用户是否可以控制该设备）</span></span><br><span class="line">:wq  <span class="preprocessor">#保存退出</span></span><br><span class="line">service network restart</span><br><span class="line">ping baidu.com</span><br><span class="line"><span class="preprocessor">#发回久违的数据包</span></span><br></pre></td></tr></table></figure>
+<p>网络问题 google centos network is unreachable，得到的答案会很多。</p>
+<h5 id="ssh">ssh</h5><p>关于<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="external">ssh</a><br>先做个端口转发<br>Virtualbox控制面板 设置－》网络－》端口转发－》设置主机端口 子系统端口<br>常用端口 21ftp端口 22 ssh端口 80 http端口<br>将主机的10000端口转发到centos 的ssh端口<br>设置之后reboot<br>在主机shell中尝试</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">ssh</span> -p10000 yourUserName<span class="variable">@localhost</span></span><br></pre></td></tr></table></figure>
+<p>每次都要输密码，觉得很烦。于是就有了设置authorized_keys的想法<br>把本机的公钥复制到centos的.ssh/authorized_keys文件里就可以里。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.ssh</span> ls</span><br><span class="line">scp -P10000 id_rsa<span class="class">.pub</span> centosUserName@localhost:. #远程复制</span><br></pre></td></tr></table></figure>
+<p>但是在ssh连接localhost时仍然提示需要输入密码，是因为.ssh/authorized_keys这个文件的权限问题引起的。其原因是，不能让所有者之外的用户对authorized_keys文件有写权限，否则，sshd将不允许使用该文件，因为它可能会被其他用户篡改。<br>可修改之后发现还是没法使用，这个时候就要查看.ssh文件夹的权限了。看它是否与内部文件权限一致。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ll -<span class="tag">a</span> <span class="class">.ssh</span></span><br><span class="line">chmod g-w .ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>这样在虚拟机开启的状态下，就可以通过本机的shell直接切换了</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">ssh</span> -p10000 centosUserName<span class="variable">@localhost</span></span><br></pre></td></tr></table></figure>
+<p>为了方便可以做一个映射</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim .zshrc</span><br><span class="line"><span class="keyword">alias</span> <span class="title">centos</span>=<span class="string">"ssh -p10000 centosUserName@localhost"</span></span><br></pre></td></tr></table></figure>
+<p>这样，每次输入centos就可以切换了。</p>
+<h3 id="php开发环境">php开发环境</h3><p>可以参考<a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-6" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-6</a><br>不过他是基于centos6的环境</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">sudo</span> yum install <span class="keyword">mariadb-server </span><span class="keyword">mariadb </span><span class="keyword">mariadb-devel</span><br><span class="line"></span><span class="label">sudo</span> service firewalld stop</span><br></pre></td></tr></table></figure>
+<p>sudo yum install npm<br>git clone ssh://fly@localhost:10000/home/fly/gulpTest</p>
+<h3 id="alfred">alfred</h3><p><a href="https://www.alfredapp.com/" target="_blank" rel="external">官网下载</a></p>
+<h3 id="xmind">xmind</h3><h3 id="Evernote">Evernote</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/16/macWorkEnvironment/" data-id="cii2xlg0y000q82k40ixij97c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setting/">setting</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/31/goodbye,2015/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          goodbye,2015
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/01/goodbyeSjzu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Sjzu,adieu</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 llfly<br>
+      <a href="https://github.com/steven5538/hexo-theme-athena" target="_blank">Athena</a> by <a href="http://steven5538.tw" target="_blank">Steven5538</a> | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
