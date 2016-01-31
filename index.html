@@ -15,8 +15,6 @@
 <meta name="twitter:title" content="了了">
 <meta name="twitter:description">
   
-    <link rel="alternative" href="/atom.xml" title="了了" type="application/atom+xml">
-  
   
     <link rel="icon" href="/favicon.png">
   
@@ -49,14 +47,61 @@
           <a id="nav-about-icon" class="nav-icon" href="/about"></a>
         
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
       </nav>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-aboutThis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <a class="article-title" href="/2016/01/22/aboutThis/">About this</a>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2016-01-22T02:59:12.000Z" itemprop="datePublished">01-22-2016</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在js中很多地方都用到<code>this</code>，结合最近的读书，做个总结。</p>
+<h2 id="关于this">关于<code>this</code></h2><ul>
+<li>随着函数使用场合不同，<code>this</code>的值会发生变化。</li>
+<li><code>this</code>对象是在运行时基于函数的执行环境绑定的。在网页的全局函数中，<code>this</code>等于<code>window</code>，而当函数被作为某个对象的方法调用时，<code>this</code>等于那个对象。</li>
+<li>也就是说<code>this</code>关键字总是指代调用者。</li>
+</ul>
+<p><strong>调用位置</strong><br>函数在代码中被调用的位置（而不是声明的位置）</p>
+<p>可以通过分析调用栈（为了达到当前执行位置所调用的所有函数）来获取调用位置，而<code>this</code>只与当前正在执行的函数的前一个调用有关。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/01/22/aboutThis/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/22/aboutThis/" data-id="cik2dos87000506k4ivrl3p65" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-goodbye,2015" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -88,10 +133,61 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/31/goodbye,2015/" data-id="ciiuetuht0018hxs6pn5u18uz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/31/goodbye,2015/" data-id="ciiwgtvp60018dvs66f66wooq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-httpCookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <a class="article-title" href="/2015/10/03/httpCookie/">cookie</a>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-10-03T00:01:12.000Z" itemprop="datePublished">10-03-2015</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Basic-knowledge/">Basic knowledge</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="cookie">cookie</h2><h3 id="基础理论">基础理论</h3><p><strong>cookie 是什么</strong></p>
+<ul>
+<li>由 web 服务器端生成，发送给客户端(通常为浏览器)的一段文本，一旦收到 cookie 浏览器会将 cookie 的 key/value 保存到本地某个目录下的文本文件里。</li>
+<li>以后每次向服务器提交请求的时候，浏览器都会把存储的 cookie 发送到服务器，根据 cookie 中的值为访问的客户端提供数据。</li>
+</ul>
+<p><strong>为什么需要 cookie</strong></p>
+<ul>
+<li>因为HTTP协议是无状态的，对于一个浏览器发出的多次请求，web 服务器无法区分是不是来源于同一个浏览器。所以，需要额外的数据用于维护会话。</li>
+<li>cookie 就是让客户端积累一组服务器特有的信息，每次访问服务器时都将这些信息返回。</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2015/10/03/httpCookie/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/03/httpCookie/" data-id="cik17g5qk00003vk4cxzoyt56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
 
     </footer>
   </div>
@@ -133,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/16/macWorkEnvironment/" data-id="ciiuetuhh000nhxs64nv08i0s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/16/macWorkEnvironment/" data-id="ciiwgtvon000ndvs6qv0kx7hw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setting/">setting</a></li></ul>
@@ -177,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/01/goodbyeSjzu/" data-id="ciiuetuhq0013hxs6udw04oci" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/01/goodbyeSjzu/" data-id="ciiwgtvp40013dvs67g5ypizl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
@@ -189,94 +285,9 @@
 
 
   
-    <article id="post-hhkb" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-      <header class="article-header">
-        
-  
-    <a class="article-title" href="/2015/06/19/hhkb/">HHKB</a>
-  
-
-      </header>
-    
-    <time class="article-date" datetime="2015-06-19T04:52:12.000Z" itemprop="datePublished">06-19-2015</time>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Environment/">Environment</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="入手">入手</h2><p>再对hhkb垂涎半年之后，终于咬牙买了下来。干脆一步到位，入手type-s，途径是通过日本同学代购邮寄回来。</p>
-<h2 id="使用">使用</h2><p>作为一个只有60个按键的小巧键盘，有的人对它视为圣物，有的人因为他的配列而无法容忍。刚拿到手时的确不太适应，没有特定功能按键，这意味着实现一些按键必须要 Fn组合键。<br>和许多笔记本电脑一样，键盘有Fn键(for Function)，Fn键可以和其他键组合出功能键(F1~F12)等，但是却没有单独提供这些功能键。键盘只有仅仅60个按键，没有单独的功能键，以用Fn-1这种方式来键入F1，用Fn-=键入F12，依此类推。<br>同样没有方向键，”上”，”下”，”左”，”右”分别用Fn-[ Fn-/ Fn-; Fn-‘来代替。<br>104键布局在ASDF左边有一个Capslock键，有两个Ctrl键在键盘下方对称的地方。而HHKB只有一个Control在Caps lock的位置，Caps lock则由Fn-Tab来代替。104键布局的Esc离主键区有比较远的距离，在左上角。而HHKB把Esc放在紧挨着Tab键和1键的地方。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/06/19/hhkb/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/06/19/hhkb/" data-id="ciiuetuhn000yhxs66cegceci" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hhkb/">hhkb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setting/">setting</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-metaTag" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-      <header class="article-header">
-        
-  
-    <a class="article-title" href="/2015/04/16/metaTag/">HTML head</a>
-  
-
-      </header>
-    
-    <time class="article-date" datetime="2015-04-16T13:12:12.000Z" itemprop="datePublished">04-16-2015</time>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/html/">html</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>HTML head 头部分的标签、元素有很多，涉及到浏览器对网页的渲染，SEO 等等，而各个浏览器内核以及各个国内浏览器厂商都有些自己的标签元素,这就造成了很多差异性。移动互联网时代，head 头部结构，移动端的 meta 元素，显得更为重要。了解每个标签的意义，写出满足自己需求的 head 头标签，是本文的目的。本篇以<a href="https://github.com/yisibl/blog/issues/1">一丝</a>的文章为基础，进行扩展总结介绍常用的 head 中各个标签、元素的意义以及使用场景。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/04/16/metaTag/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/16/metaTag/" data-id="ciiuetuhf000hhxs63umgclc2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reprint/">reprint</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -286,8 +297,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 llfly<br>
-      <a href="https://github.com/steven5538/hexo-theme-athena" target="_blank">Athena</a> by <a href="http://steven5538.tw" target="_blank">Steven5538</a> | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 llfly<br>
+      Most people talk a lot , few are up for the moment .
     </div>
   </div>
 </footer>

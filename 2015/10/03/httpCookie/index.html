@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>cookie | 了了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cookie基础理论cookie 是什么
+
+由 web 服务器端生成，发送给客户端(通常为浏览器)的一段文本，一旦收到 cookie 浏览器会将 cookie 的 key/value 保存到本地某个目录下的文本文件里。
+以后每次向服务器提交请求的时候，浏览器都会把存储的 cookie 发送到服务器，根据 cookie 中的值为访问的客户端提供数据。
+
+为什么需要 cookie
+
+因为HTTP协议是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cookie">
+<meta property="og:url" content="http://yoursite.com/2015/10/03/httpCookie/index.html">
+<meta property="og:site_name" content="了了">
+<meta property="og:description" content="cookie基础理论cookie 是什么
+
+由 web 服务器端生成，发送给客户端(通常为浏览器)的一段文本，一旦收到 cookie 浏览器会将 cookie 的 key/value 保存到本地某个目录下的文本文件里。
+以后每次向服务器提交请求的时候，浏览器都会把存储的 cookie 发送到服务器，根据 cookie 中的值为访问的客户端提供数据。
+
+为什么需要 cookie
+
+因为HTTP协议是">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/cookie_chrome1.png">
+<meta property="og:updated_time" content="2016-01-30T16:00:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cookie">
+<meta name="twitter:description" content="cookie基础理论cookie 是什么
+
+由 web 服务器端生成，发送给客户端(通常为浏览器)的一段文本，一旦收到 cookie 浏览器会将 cookie 的 key/value 保存到本地某个目录下的文本文件里。
+以后每次向服务器提交请求的时候，浏览器都会把存储的 cookie 发送到服务器，根据 cookie 中的值为访问的客户端提供数据。
+
+为什么需要 cookie
+
+因为HTTP协议是">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">了了</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">清醒时写码，心塞时跑步，糊涂时读书。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-httpCookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      cookie
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-10-03T00:01:12.000Z" itemprop="datePublished">10-03-2015</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Basic-knowledge/">Basic knowledge</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="cookie">cookie</h2><h3 id="基础理论">基础理论</h3><p><strong>cookie 是什么</strong></p>
+<ul>
+<li>由 web 服务器端生成，发送给客户端(通常为浏览器)的一段文本，一旦收到 cookie 浏览器会将 cookie 的 key/value 保存到本地某个目录下的文本文件里。</li>
+<li>以后每次向服务器提交请求的时候，浏览器都会把存储的 cookie 发送到服务器，根据 cookie 中的值为访问的客户端提供数据。</li>
+</ul>
+<p><strong>为什么需要 cookie</strong></p>
+<ul>
+<li>因为HTTP协议是无状态的，对于一个浏览器发出的多次请求，web 服务器无法区分是不是来源于同一个浏览器。所以，需要额外的数据用于维护会话。</li>
+<li>cookie 就是让客户端积累一组服务器特有的信息，每次访问服务器时都将这些信息返回。</li>
+</ul>
+<a id="more"></a>
+<p><strong>cookie 的限制</strong></p>
+<ul>
+<li>大多数浏览器支持最大为 4096 字节的 cookie 。由于这限制了 cookie 的大小，最好用 cookie 来存储少量数据，或者存储用户 ID 之类的标识符。用户 ID 随后便可用于标识用户，以及从数据库或其他数据源中读取用户信息。</li>
+<li>浏览器限制站点可以在用户计算机上存储的 cookie 的数量。 cookie 最大长度和域名个数由不同浏览器决定，具体如下：<br>浏览器 支持域名个数 最大长度<br>IE7以上 50个 4095B<br>Firefox 50个 4097B<br>Opera 30个 4096B<br>Safari/WebKit 无限制 4097B<br>如果试图存储更多 cookie，则最旧的 cookie 便会被丢弃。有些浏览器还会对它们将接受的来自所有站点的 cookie 总数作出绝对限制，通常为 300 个。</li>
+</ul>
+<h3 id="cookie_的类型">cookie 的类型</h3><ul>
+<li>会话 cookie<br>临时 cookie ，纪录用户访问站点时的设置和偏好。用户退出客户端，即被删除。</li>
+<li>持久 cookie<br>存储在硬盘上，客户端退出，机器重启依然存在。通常用来维护某个用户会周期性访问的站点的配置文件或登录名。</li>
+</ul>
+<p>可见它们的唯一区别就是过期时间。</p>
+<h3 id="客户端的_cookie">客户端的 cookie</h3><p>这里只说浏览器这种客户端，不同的浏览器会以不同的方式来存储 cookie ，例如 chrome 的 cookie 存放在<code>~/.config/browser-launcher2/google-chrome/Default/</code><br>在浏览器中可以用<code>document.cookie</code>读取及设置 cookie</p>
+<h4 id="不同站点使用不同的_cookie">不同站点使用不同的 cookie</h4><p>浏览器内部的 cookie 罐中可以有成百上千个 cookie ，但浏览器不会将每个 cookie 都发送给所有的站点。实际上，它们通常只向每个站点发送2-3个 cookie</p>
+<ul>
+<li>对所有这些 cookie 字节进行传输会严重降级性能。浏览器实际传输的 cookie 字节数要比实际的内容字节数多。</li>
+<li>cookie 中包含的是服务器特有的名值对，对于大部分站点来说大多数 cookie 都只是无法识别的无用数据。</li>
+<li>将所有的 cookie 发送给所有站点会引发潜在的隐私问题。</li>
+</ul>
+<h3 id="cookie_成分">cookie 成分</h3><p>现在的 cookie 规范 <a href="http://tools.ietf.org/html/rfc6265" target="_blank" rel="external">rfc6265</a> 在 <a href="http://tools.ietf.org/html/rfc6265#section-5.2" target="_blank" rel="external">5.2节</a> 定义的 Set-Cookie Header ，除了必须包含 cookie 正文，还可以选择性包含6个属性<br>expires、domain、path、secure、max-age、httponly，它们之间用英文分号和空格 <code>;</code> 连接。</p>
+<p>响应头部：<br><code>Set-Cookie:name=value[;expires=data][;max-age=max-age-in-seconds;][;path=path][;domain=domain][;secure][; HttpOnly]</code></p>
+<p>属性</p>
+<ul>
+<li>NAME＝VALUE<br>强制。NAME 和 VALUE 都是字符序列，除非包含在双引号内，否则不包括分号、逗号、等号和空格。</li>
+<li>Expires<br>可选。这个属性指定一个日期字符串，用来定义 Cookie 的实际生存期。唯一合法的时区为 GMT ，各日期元素之间的分隔符一定要是长划线。超过这个时间，cookie 将消失，不可访问。如果没有指定 Expires ， cookie 就会在用户会话结束时过期。<br>格式 <code>Sun, DD-Mon-YY HH:MM:SS GMT</code></li>
+<li>Domain<br>可选。浏览器只向指定域中的服务器主机名发送 cookie。如果没有指定域，就默认为产生 Set-Cookie 响应的服务器的主机名。</li>
+<li>Path<br>可选。通过这个属性可以为服务器上特定的文档分配 cookie 。如果 path 属性时一个 URL 路径前缀，就可以附加一个 cookie 。如果没有指定路径，这默认为’/‘，对此域名下的任何路径都可访问。</li>
+<li>Secure<br>可选。当设置为 true 时，表示创建的 cookie 会被以安全的形式向服务器传输，也就是只能在 HTTPS 连接中被浏览器传递到服务器端进行会话验证，如果是 HTTP 连接则不会传递该信息，所以不会被窃取到 cookie 的具体内容。在客户端我们无法在document.Cookie找到被设置了<code>Secure=true</code>的 cookie 键值对。 Secure 属性是防止信息在传递的过程中被监听捕获后信息泄漏，而下面的 HttpOnly 属性的目的是防止程序获取 cookie 后进行攻击。</li>
+<li>Max-Age<br>可选。这个属性的值是一个整数，用于设置以秒为单位的 cookie 生存期。 max-age 作为对 expires 的补充，现阶段有兼容性问题（IE低版本不支持），所以一般不单独使用。</li>
+<li>HttpOnly<br>可选。这是微软对 cookie 做的扩展。如果在 cookie 中设置了 <code>HttpOnly</code> 属性，那么通过程序(JS脚本、Applet等)将无法读取到 cookie 信息，这样能有效的防止 XSS 攻击。</li>
+</ul>
+<h3 id="测试">测试</h3><p>这里用nodejs为例，做个演示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*先设置本地 hosts</span><br><span class="line">sudo vi /etc/hosts</span><br><span class="line">127.0.0.1   a.test.com</span><br><span class="line">127.0.0.1   b.test.com</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> urlObj = url.parse(req.url);</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">'/favicon.ico'</span> == urlObj.pathname)&#123;</span><br><span class="line">        res.writeHead(<span class="number">404</span>);</span><br><span class="line">        res.end(http.STATUS_CODES[<span class="number">404</span>]);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        res.writeHead(<span class="number">200</span>,&#123;</span><br><span class="line">            <span class="string">"Set-Cookie"</span>:<span class="string">"name=llfly;path=/p;domain=a.test.com;expires=Sun, 08-Nov-2015 15:43:30 GMT"</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        res.end();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xiiua.com1.z0.glb.clouddn.com/cookie_chrome1.png" alt="chrome cookie查看"></p>
+<p>会看到只有在访问<code>a.test.com:8080/p</code>的情况下会存在 cookie ，因为是 GMT 时间，所以在 23:43:30 后会消失，而其他情况如<code>localhost:8080/p</code>，<code>b.test.com:8080/p</code>，<code>a.test.com:8080</code>无论任何时间都不存在 cookie ，证明了 path 和 domain 参数的作用。</p>
+<h3 id="主要用途">主要用途</h3><p>服务器可以利用 cookie 包含信息的任意性来筛选并经常性维护这些信息，以判断在 HTTP 传输中的状态。<br>cookie 最典型的应用是判定注册用户是否已经登录网站，用户可能会得到提示，是否在下一次进入此网站时保留用户信息以便简化登录手续，这些都是 cookie 的功用。<br>另一个重要应用场合是“购物车”之类处理。用户可能会在一段时间内在同一家网站的不同页面中选择不同的商品，这些信息都会写入 cookie，以便在最后付款时提取信息。</p>
+<h3 id="参考">参考</h3><p>学习总结，主要参考：<br><a href="http://www.amazon.cn/HTTP%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%90%89%E5%B0%94%E5%88%A9/dp/B008XFDQ14/ref=sr_1_1?ie=UTF8&amp;qid=1447069763&amp;sr=8-1&amp;keywords=http%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97" target="_blank" rel="external">http权威指南</a><br><a href="http://www.amazon.cn/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode-js-%E6%9C%B4%E7%81%B5/dp/B00GOM5IL4/ref=sr_1_1?ie=UTF8&amp;qid=1454162183&amp;sr=8-1&amp;keywords=%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAnodejs#nav-belt" target="_blank" rel="external">深入潜出nodejs</a><br><a href="https://tools.ietf.org/html/rfc6265" target="_blank" rel="external">RFC</a><br><a href="https://imququ.com/post/host-only-cookie.html" target="_blank" rel="external">你所不知道的HostOnly Cookie</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/03/httpCookie/" data-id="cik17g5qk00003vk4cxzoyt56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/31/goodbye,2015/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          goodbye,2015
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/16/macWorkEnvironment/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac Work Environment</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 llfly<br>
+      Most people talk a lot , few are up for the moment .
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
