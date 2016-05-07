@@ -11,11 +11,11 @@
 <meta property="og:url" content="http://yoursite.com/2015/03/20/proOfEncoded/index.html">
 <meta property="og:site_name" content="了了">
 <meta property="og:description" content="“手持两把锟斤拷 口中疾呼烫烫烫”这也算是字符编码问题中最经典的笑话了，实习阶段遇到了很多字符转换问题，今天总结一下。">
-<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode1.jpg">
-<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode2.jpg">
-<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode3.jpg">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode1.png">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode2.png">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode3.png">
 <meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/encode4.jpg">
-<meta property="og:updated_time" content="2016-05-07T11:36:23.000Z">
+<meta property="og:updated_time" content="2016-05-07T12:04:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Encoded">
 <meta name="twitter:description" content="“手持两把锟斤拷 口中疾呼烫烫烫”这也算是字符编码问题中最经典的笑话了，实习阶段遇到了很多字符转换问题，今天总结一下。">
@@ -88,10 +88,10 @@
 <h1 id="常用字符集和字符编码">常用字符集和字符编码</h1><p>常见字符集名称：ASCII字符集、GB2312字符集、BIG5字符集、GB18030字符集、Unicode字符集等。计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。</p>
 <h2 id="ASCII字符集&amp;编码">ASCII字符集&amp;编码</h2><h3 id="ASCII">ASCII</h3><p>（American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语，而其扩展版本EASCII则可以勉强显示其他西欧语言。它是现今最通用的单字节编码系统（但是有被Unicode追上的迹象），并等同于国际标准ISO/IEC 646。</p>
 <h3 id="ASCII字符集">ASCII字符集</h3><p>主要包括控制字符（回车键、退格、换行键等）；可显示字符（英文大小写字符、阿拉伯数字和西文符号）。</p>
-<h3 id="ASCII编码">ASCII编码</h3><p>将ASCII字符集转换为计算机可以接受的数字系统的数的规则。使用7位（bits）表示一个字符，共128字符；但是7位编码的字符集只能支持128个字符，为了表示更多的欧洲常用字符对ASCII进行了扩展，ASCII扩展字符集使用8位（bits）表示一个字符，共256字符。ASCII字符集映射到数字编码规则如下图所示：<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode1.jpg" alt="ASCII编码表"><br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode2.jpg" alt="扩展ASCII编码表"><br>ASCII的最大缺点是只能显示26个基本拉丁字母、阿拉伯数目字和英式标点符号，因此只能用于显示现代美国英语（而且在处理英语当中的外来词如naïve、café、élite等等时，所有重音符号都不得不去掉，即使这样做会违反拼写规则）。而EASCII虽然解决了部份西欧语言的显示问题，但对更多其他语言依然无能为力。因此现在的苹果电脑已经抛弃ASCII而转用Unicode。</p>
+<h3 id="ASCII编码">ASCII编码</h3><p>将ASCII字符集转换为计算机可以接受的数字系统的数的规则。使用7位（bits）表示一个字符，共128字符；但是7位编码的字符集只能支持128个字符，为了表示更多的欧洲常用字符对ASCII进行了扩展，ASCII扩展字符集使用8位（bits）表示一个字符，共256字符。ASCII字符集映射到数字编码规则如下图所示：<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode1.png" alt="ASCII编码表"><br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode2.png" alt="扩展ASCII编码表"><br>ASCII的最大缺点是只能显示26个基本拉丁字母、阿拉伯数目字和英式标点符号，因此只能用于显示现代美国英语（而且在处理英语当中的外来词如naïve、café、élite等等时，所有重音符号都不得不去掉，即使这样做会违反拼写规则）。而EASCII虽然解决了部份西欧语言的显示问题，但对更多其他语言依然无能为力。因此现在的苹果电脑已经抛弃ASCII而转用Unicode。</p>
 <h2 id="GBXXXX字符集&amp;编码">GBXXXX字符集&amp;编码</h2><h3 id="GB2312">GB2312</h3><p>计算机发明之初及后面很长一段时间，只用应用于美国及西方一些发达国家，ASCII能够很好满足用户的需求。但是当天朝也有了计算机之后，为了显示中文，必须设计一套编码规则用于将汉字转换为计算机可以接受的数字系统的数。</p>
 <p>天朝专家把那些127号之后的奇异符号们（即EASCII）取消掉，规定：一个小于127的字符的意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字，前面的一个字节（他称之为高字节）从0xA1用到 0xF7，后面一个字节（低字节）从0xA1到0xFE，这样我们就可以组合出大约7000多个简体汉字了。在这些编码里，还把数学符号、罗马希腊的 字母、日文的假名们都编进去了，连在ASCII里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的”全角”字符，而原来在127号以下的那些就叫”半角”字符了。</p>
-<p>GB2312或GB2312-80是中国国家标准简体中文字符集，全称《信息交换用汉字编码字符集·基本集》，又称GB0，由中国国家标准总局发布，1981年5月1日实施。GB2312编码通行于中国大陆；新加坡等地也采用此编码。中国大陆几乎所有的中文系统和国际化的软件都支持GB2312。GB2312的出现，基本满足了汉字的计算机处理需要，它所收录的汉字已经覆盖中国大陆99.75%的使用频率。对于人名、古汉语等方面出现的罕用字，GB2312不能处理，这导致了后来GBK及GB 18030汉字字符集的出现。下图是GB2312编码的开始部分（由于其非常庞大，只列举开始部分，具体可查看GB2312简体中文编码表）：<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode3.jpg" alt="GB2312编码表的开始部分"><br>由于GB 2312-80只收录6763个汉字，有不少汉字，如部分在GB 2312-80推出以后才简化的汉字（如”啰”），部分人名用字（如中国前总理朱镕基的”镕”字），台湾及香港使用的繁体字，日语及朝鲜语汉字等，并未有收录在内。于是厂商微软利用GB 2312-80未使用的编码空间，收录GB 13000.1-93全部字符制定了GBK编码。根据微软资料，GBK是对GB2312-80的扩展，也就是CP936字码表 (Code Page 936)的扩展（之前CP936和GB 2312-80一模一样），最早实现于Windows 95简体中文版。虽然GBK收录GB 13000.1-93的全部字符，但编码方式并不相同。GBK自身并非国家标准，只是曾由国家技术监督局标准化司、电子工业部科技与质量监督司公布为”技术规范指导性文件”。原始GB13000一直未被业界采用，后续国家标准GB18030技术上兼容GBK而非GB13000。</p>
+<p>GB2312或GB2312-80是中国国家标准简体中文字符集，全称《信息交换用汉字编码字符集·基本集》，又称GB0，由中国国家标准总局发布，1981年5月1日实施。GB2312编码通行于中国大陆；新加坡等地也采用此编码。中国大陆几乎所有的中文系统和国际化的软件都支持GB2312。GB2312的出现，基本满足了汉字的计算机处理需要，它所收录的汉字已经覆盖中国大陆99.75%的使用频率。对于人名、古汉语等方面出现的罕用字，GB2312不能处理，这导致了后来GBK及GB 18030汉字字符集的出现。下图是GB2312编码的开始部分（由于其非常庞大，只列举开始部分，具体可查看GB2312简体中文编码表）：<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode3.png" alt="GB2312编码表的开始部分"><br>由于GB 2312-80只收录6763个汉字，有不少汉字，如部分在GB 2312-80推出以后才简化的汉字（如”啰”），部分人名用字（如中国前总理朱镕基的”镕”字），台湾及香港使用的繁体字，日语及朝鲜语汉字等，并未有收录在内。于是厂商微软利用GB 2312-80未使用的编码空间，收录GB 13000.1-93全部字符制定了GBK编码。根据微软资料，GBK是对GB2312-80的扩展，也就是CP936字码表 (Code Page 936)的扩展（之前CP936和GB 2312-80一模一样），最早实现于Windows 95简体中文版。虽然GBK收录GB 13000.1-93的全部字符，但编码方式并不相同。GBK自身并非国家标准，只是曾由国家技术监督局标准化司、电子工业部科技与质量监督司公布为”技术规范指导性文件”。原始GB13000一直未被业界采用，后续国家标准GB18030技术上兼容GBK而非GB13000。</p>
 <h3 id="GB_18030">GB 18030</h3><p>全称：国家标准GB 18030-2005《信息技术 中文编码字符集》，是中华人民共和国现时最新的内码字集，是GB 18030-2000《信息技术 信息交换用汉字编码字符集 基本集的扩充》的修订版。与GB 2312-1980完全兼容，与GBK基本兼容，支持GB 13000及Unicode的全部统一汉字，共收录汉字70244个。GB 18030主要有以下特点：<br>1.与UTF-8相同，采用多字节编码，每个字可以由1个、2个或4个字节组成。<br>2.编码空间庞大，最多可定义161万个字符。<br>3.支持中国国内少数民族的文字，不需要动用造字区。<br>4.汉字收录范围包含繁体汉字以及日韩汉字<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/encode4.jpg" alt="GB18030编码总体结构"><br>本规格的初版使中华人民共和国信息产业部电子工业标准化研究所起草，由国家质量技术监督局于2000年3月17日发布。现行版本为国家质量监督检验总局和中国国家标准化管理委员会于2005年11月8日发布，2006年5月1日实施。此规格为在中国境内所有软件产品支持的强制规格。</p>
 <h2 id="BIG5字符集&amp;编码">BIG5字符集&amp;编码</h2><p>Big5，又称为大五码或五大码，是使用繁体中文（正体中文）社区中最常用的电脑汉字字符集标准，共收录13,060个汉字。中文码分为内码及交换码两类，Big5属中文内码，知名的中文交换码有CCCII、CNS11643。Big5虽普及于台湾、香港与澳门等繁体中文通行区，但长期以来并非当地的国家标准，而只是业界标准。倚天中文系统、Windows等主要系统的字符集都是以Big5为基准，但厂商又各自增加不同的造字与造字区，派生成多种不同版本。2003年，Big5被收录到CNS11643中文标准交换码的附录当中，取得了较正式的地位。这个最新版本被称为Big5-2003。<br>Big5码是一套双字节字符集，使用了双八码存储方法，以两个字节来安放一个字。第一个字节称为”高位字节”，第二个字节称为”低位字节”。”高位字节”使用了0x81-0xFE，”低位字节”使用了0x40-0x7E，及0xA1-0xFE。在Big5的分区中：</p>
 <table>
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/20/proOfEncoded/" data-id="cinx3calj0007l9fyj9xwb1cc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/20/proOfEncoded/" data-id="cinx3po8u0007pofyfu1xnsll" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encoded/">encoded</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reprint/">reprint</a></li></ul>
