@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Observer | 了了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是观察者模式观察者模式属于行为设计模式的一种，也就是说专注于改善或简化系统中不同对象之间的通信。
+目的定义对象间的一种一对多的依赖关系，当一个对象状态发生改变时，所有依赖于它的对象都得到通知并自动更新，以此达到解耦的目的。
+别名依赖(Dependents)，发布-订阅(Publish-Subscribe)，网上说的观察者模式和发布订阅模式不同其实是不对的。
+有观察者对象(observer)，就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Observer">
+<meta property="og:url" content="http://yoursite.com/2016/05/01/Observer/index.html">
+<meta property="og:site_name" content="了了">
+<meta property="og:description" content="什么是观察者模式观察者模式属于行为设计模式的一种，也就是说专注于改善或简化系统中不同对象之间的通信。
+目的定义对象间的一种一对多的依赖关系，当一个对象状态发生改变时，所有依赖于它的对象都得到通知并自动更新，以此达到解耦的目的。
+别名依赖(Dependents)，发布-订阅(Publish-Subscribe)，网上说的观察者模式和发布订阅模式不同其实是不对的。
+有观察者对象(observer)，就">
+<meta property="og:updated_time" content="2016-05-07T11:29:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Observer">
+<meta name="twitter:description" content="什么是观察者模式观察者模式属于行为设计模式的一种，也就是说专注于改善或简化系统中不同对象之间的通信。
+目的定义对象间的一种一对多的依赖关系，当一个对象状态发生改变时，所有依赖于它的对象都得到通知并自动更新，以此达到解耦的目的。
+别名依赖(Dependents)，发布-订阅(Publish-Subscribe)，网上说的观察者模式和发布订阅模式不同其实是不对的。
+有观察者对象(observer)，就">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">了了</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">清醒时写码，心塞时跑步，糊涂时读书。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Observer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Observer
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2016-05-01T13:38:20.000Z" itemprop="datePublished">05-01-2016</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是观察者模式">什么是观察者模式</h2><p>观察者模式属于行为设计模式的一种，也就是说专注于改善或简化系统中不同对象之间的通信。</p>
+<h3 id="目的">目的</h3><p>定义对象间的一种一对多的依赖关系，当一个对象状态发生改变时，所有依赖于它的对象都得到通知并自动更新，以此达到解耦的目的。</p>
+<h3 id="别名">别名</h3><p>依赖(Dependents)，发布-订阅(Publish-Subscribe)，网上说的观察者模式和发布订阅模式不同其实是不对的。</p>
+<p>有观察者对象(observer)，就一定有观察者需要关注的目标对象(subject)，观察者就好比订阅者，目标对象就好比发布者。</p>
+<p>发布者：向订阅者们发送数据，一个目标可以有任意数目的依赖它的观察者，也就是一个发布者可能有许多订阅者<br>订阅者：数据到来时收到通知，消费数据，根据数据作出反应。总而言之，从发布者那里接受数据。</p>
+<p>为了便于统一，下面用目标对象和观察者来做解释。</p>
+<a id="more"></a>
+<h3 id="适用性">适用性</h3><ul>
+<li>当一个抽象模型有两个方面，其中一个方面依赖于另一方面。将这二者封装在独立的对象中以使它们可以各自独立地改变和复用</li>
+<li>当对一个对象地改变需要同时改变其他对象，而不知道具体有多少对象需要改变。</li>
+<li>当一个对象必须通知其他对象，而又不能假定其他对象是谁。也就是说，不希望这些对象是紧密耦合的。</li>
+</ul>
+<h3 id="优缺点">优缺点</h3><p>优点：</p>
+<ol>
+<li>广播通信，自动通知所有已经订阅过的对象。</li>
+<li>目标对象和观察者之间抽象耦合</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>创建可观察对象需要时间开销，可用惰性加载实现（把新的可观察对象的实例化推迟到需要发送事件通知的时候）</li>
+<li>意外的更新（观察者不知道其他观察者的存在，可能对改变目标的代价一无所知）</li>
+</ol>
+<h3 id="实现">实现</h3><p>实现上先思考两个问题：谁主导（谁去维护登记，注销的动作），谁推送消息。<br>在谁主导这个问题上可以分为两类（好像废话）：</p>
+<ol>
+<li>目标对象主导，目标对象主动登记，推送，注销</li>
+</ol>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个目标对象</span></span><br><span class="line"><span class="keyword">var</span> Publisher = <span class="keyword">new</span> Observable;</span><br><span class="line"><span class="comment">//定义一个观察者</span></span><br><span class="line"><span class="keyword">var</span> Subscriber = <span class="function"><span class="keyword">function</span><span class="params">(news)</span></span>&#123;&#125;;</span><br><span class="line"><span class="comment">//登记观察者</span></span><br><span class="line">Publisher.subscribeCustomer(Subscriber);</span><br><span class="line"><span class="comment">//发布消息</span></span><br><span class="line">Publisher.deliver(<span class="string">'read all about it'</span>);</span><br><span class="line"><span class="comment">//注销观察者</span></span><br><span class="line">Publisher.unSubscribeCustomer(Subscriber);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>观察者主导，主动登记注销。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义两个目标对象</span></span><br><span class="line"><span class="keyword">var</span> NewYorkTimes = <span class="keyword">new</span> Publisher;</span><br><span class="line"><span class="keyword">var</span> BeijingEveningNews = <span class="keyword">new</span> Publisher;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义两个观察者</span></span><br><span class="line"><span class="keyword">var</span> Joe = <span class="function"><span class="keyword">function</span>(<span class="params">from</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Delivery from '</span>+ from + <span class="string">'to Joe'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Fy = <span class="function"><span class="keyword">function</span>(<span class="params">from</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'Delivery from '</span>+ from + <span class="string">'to Fy'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//观察者主动登记消息</span></span><br><span class="line"><span class="comment">//观察者拥有了登记和注销的权利</span></span><br><span class="line">Joe.subscribe(NewYorkTimes);</span><br><span class="line">Fy.subscribe(NewYorkTimes).subscribe(BeijingEveningNews);</span><br><span class="line"></span><br><span class="line"><span class="comment">//目标对象发送消息</span></span><br><span class="line">NewYorkTimes.deliver(<span class="string">'here is your paper'</span>);</span><br><span class="line">BeijingEveningNews.deliver(<span class="string">'hello'</span>);</span><br></pre></td></tr></table></figure>
+<p>在消息的传递上也分两种情况：</p>
+<ol>
+<li>一个极端情况是，目标向观察者发送关于改变的详细信息，不管它们需要与否，我们称之为推模型（push model）。</li>
+<li>另一个极端是拉模型（pull model），目标除最小通知外什么也不推送，全靠观察者显示地向目标询问细节。</li>
+</ol>
+<p>拉模型强调的是目标不知道它的观察者，而推模型假定目标知道一些观察者的需要的信息。推模型可能使得观察者相对难以复用，因为目标对观察者的假定可能并不总是正确的。另一方面。拉模型可能效率较差，因为观察者对象需要在没有目标对象帮助的情况下确定什么改变了。</p>
+<p>这也就是我们说的轮循机制还是通知回调机制，在js的具体地实现上，浏览器和node repl环境因为不知道谁登记过，所以采用了轮循机制，而自定义事件采用了通知回调机制。</p>
+<h3 id="应用场景">应用场景</h3><p>在DOM脚本编程环境中的高级事件模式中。事件监听器(listener)是一种内置的观察者，但是事件处理器(handler)不是。</p>
+<ul>
+<li>事件监听器：一个事件可以与几个监听器关联，每个监听器都能独立于其他监听器而改变。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ele = $(<span class="string">'ele'</span>);</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//handle click</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//do other stuff with click</span></span><br><span class="line">&#125;;</span><br><span class="line">addEvent(element,<span class="string">'click'</span>,fn1);</span><br><span class="line">addEvent(element,<span class="string">'click'</span>,fn2);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>事件处理器：把事件传给与其关联的函数的手段，只能有一种回调方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ele = $(<span class="string">'ele'</span>);</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//handle click</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//do other stuff with click</span></span><br><span class="line">&#125;;</span><br><span class="line">ele.onclick = fn1;</span><br><span class="line">ele.onclick = fn2;</span><br><span class="line"><span class="comment">//fn2会覆盖fn1</span></span><br></pre></td></tr></table></figure>
+<h3 id="演变与实践">演变与实践</h3><p>根据观察者和目标对象主导地位的选择以及推拉模型的选择，观察者模式的实现也是多样化的，在面向对象的语言中通常都声明Subject（目标对象）和Observer（观察者）接口，再通过具体类去实现接口。</p>
+<p>其实除了目标对象和观察者之外，设想当目标和观察者之间的依赖关系特别复杂时，这个时候可能就需要一个维护这些关系的更改管理器(ChangeMannager)对象，在java中可以通过消息队列去实现，在js中可以通过hash实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用中间管理器，使用推模型</span></span><br><span class="line"><span class="keyword">var</span> pubsub = &#123;&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">q</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> topics = &#123;&#125;,</span><br><span class="line">	subUid = -<span class="number">1</span>;</span><br><span class="line">	<span class="comment">//发布或广播事件，包含特定的topic名称和参数（比如传递的数据）</span></span><br><span class="line">	q.publish = <span class="function"><span class="keyword">function</span>(<span class="params">topic,args</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!topics[topic])&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> subscribers = topics[topic],</span><br><span class="line">			len = subscribers ? subscribers.length:<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(len--)&#123;</span><br><span class="line">			subscribers[len].func(topic,args);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//通过特定的名称和回调函数订阅事件，topic/event触发时执行事件</span></span><br><span class="line">	q.subscribe = <span class="function"><span class="keyword">function</span>(<span class="params">topic,func</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!topics[topic])&#123;</span><br><span class="line">			topics[topic] = [];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> token = (++subUid).toString();</span><br><span class="line">		topics[topic].push(&#123;</span><br><span class="line">			token:token,</span><br><span class="line">			func:func</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">return</span> token;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//基于订阅上的标记引用，通过特定topic取消订阅</span></span><br><span class="line">	q.unsubscribe = <span class="function"><span class="keyword">function</span>(<span class="params">token</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> m <span class="keyword">in</span> topics)&#123;</span><br><span class="line">			<span class="keyword">if</span>(topics[m])&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>,j=topics[m].length;i&lt;j;i++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(topics[m][i].token === token)&#123;</span><br><span class="line">						topics[m].splice(i,<span class="number">1</span>);</span><br><span class="line">						<span class="keyword">return</span> token;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)(pubsub);</span><br><span class="line"></span><br><span class="line"><span class="comment">//test</span></span><br><span class="line"><span class="keyword">var</span> cb1 = <span class="function"><span class="keyword">function</span>(<span class="params">topics,data</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'第一个观察者:'</span> + topics + <span class="string">":"</span> + data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cb2 = <span class="function"><span class="keyword">function</span>(<span class="params">topics,data</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'第二个观察者:'</span> + topics + <span class="string">":"</span> + data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> token1 = pubsub.subscribe(<span class="string">'test'</span>,cb1);</span><br><span class="line"><span class="keyword">var</span> token2 = pubsub.subscribe(<span class="string">'test'</span>,cb2);</span><br><span class="line"></span><br><span class="line">pubsub.publish(<span class="string">'test'</span>,<span class="string">'第一次发布信息'</span>);</span><br><span class="line">pubsub.unsubscribe(token2);</span><br><span class="line">pubsub.publish(<span class="string">'test'</span>,<span class="string">'第二次发布信息'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="推荐阅读">推荐阅读</h3><p><a href="https://github.com/mikehostetler/amplify/blob/master/lib/amplify.core.js" target="_blank" rel="external">amplify publish 模块</a><br><a href="https://github.com/uxder/Radio/blob/master/radio.js" target="_blank" rel="external">radio.js</a><br><a href="https://github.com/mroderick/PubSubJS" target="_blank" rel="external">PubSubJS</a><br><a href="https://github.com/phiggins42/bloody-jquery-plugins/blob/master/pubsub.js" target="_blank" rel="external">bloody-jquery-plugins</a><br><a href="https://gist.github.com/cowboy/661855" target="_blank" rel="external">jquery-tiny-pubsub</a><br><a href="https://github.com/addyosmani/pubsubz" target="_blank" rel="external">pubsubz</a><br><a href="https://www.amazon.cn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%9B%E4%B9%A6-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80-Erich-Gamma/dp/B001130JN8/ref=sr_1_1?ie=UTF8&amp;qid=1462001587&amp;sr=8-1&amp;keywords=%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F" target="_blank" rel="external">四人帮”Design Patterns”</a></p>
+<p>写在最后，这里并没有详细的去叙述轮循轮询机制的消息队列和事件循环，一方面自己没有理清其中的关系，另一方面认识不是很深刻。日后再做总结。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/01/Observer/" data-id="cinx2tncw001khefyyo0hdoyr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/22/aboutThis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About this</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 llfly<br>
+      Most people talk a lot , few are up for the moment .
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
