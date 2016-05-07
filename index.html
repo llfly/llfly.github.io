@@ -89,10 +89,106 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/01/Observer/" data-id="cinx2tncw001khefyyo0hdoyr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/01/Observer/" data-id="cinx3camg001ql9fyu8y7fuwp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/design-pattern/">design pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cross-domain Test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <a class="article-title" href="/2016/04/10/cross-domain Test/">cross-domain Test</a>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2016-04-10T02:59:12.000Z" itemprop="datePublished">04-10-2016</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="写在开头">写在开头</h2><p>老生常谈的问题，网上的总结也有很多，重要的不是总结，而是把所有的方法都尝试一遍。</p>
+<p>纸上得来终觉浅，绝知此事要躬行</p>
+<h2 id="域">域</h2><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>说明</th>
+<th>是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>同一域名下</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/lab/a.js</code>和<code>http://www.a.com/script/b.js</code></td>
+<td>同域名不同文件夹</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com:8000/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>同一域名，不同端口</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>https://www.a.com/b.js</code></td>
+<td>同一域名，不同协议</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://70.32.92.74/b.js</code></td>
+<td>域名和域名对应ip</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://script.a.com/b.js</code></td>
+<td>主域相同，子域不同</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://a.com/b.js</code></td>
+<td>同一域名，不同二级域名（同上）</td>
+<td>不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td><code>http://www.cnblogs.com/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>不同域名</td>
+<td>不允许</td>
+</tr>
+</tbody>
+</table>
+<h2 id="跨域">跨域</h2><p>浏览器出于安全的考虑（避免恶意网站轻易读取其他网站显示的内容数据等）原则上允许跨域写而限制了跨域读。写是指数据的上行/发送( <code>sending request</code> )，读是指数据的下行/接受( <code>receiving response</code> )。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/04/10/cross-domain Test/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/10/cross-domain Test/" data-id="cinx3camb001hl9fy2d7ma9v3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cross-domain/">cross-domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
 
     </footer>
   </div>
@@ -138,7 +234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/22/aboutThis/" data-id="cinx2tncu001hhefyj8fp6zyx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/22/aboutThis/" data-id="cinx3came001nl9fyjszn28yf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
@@ -180,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/31/goodbye,2015/" data-id="cinx2tnct001ehefyi0y0zcu5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/31/goodbye,2015/" data-id="cinx3cam8001el9fy6rjd8w71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
@@ -231,55 +327,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/03/httpCookie/" data-id="cinx2tnck000zhefy8zsbn2t8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/03/httpCookie/" data-id="cinx3caly000zl9fyo6dkr6yv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-macWorkEnvironment" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-      <header class="article-header">
-        
-  
-    <a class="article-title" href="/2015/08/16/macWorkEnvironment/">Mac Work Environment</a>
-  
-
-      </header>
-    
-    <time class="article-date" datetime="2015-08-16T09:57:12.000Z" itemprop="datePublished">08-16-2015</time>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Environment/">Environment</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>mac下常用工具整理</p>
-<h3 id="sublime_text3">sublime text3</h3><h4 id="下载">下载</h4><p><a href="http://www.sublimetext.com/3">sublime</a></p>
-<h4 id="package_control">package control</h4><p>安装package control插件<br>功能：安装包管理<br>安装：打开Sublime，按下Control + <code>(Mac)或者Ctrl +</code>(Windows)，然后粘贴上下面的代码：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/16/macWorkEnvironment/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/16/macWorkEnvironment/" data-id="cinx2tncf000ohefyh0ch1z6z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setting/">setting</a></li></ul>
 
     </footer>
   </div>

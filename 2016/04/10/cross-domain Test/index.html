@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>cross-domain Test | 了了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写在开头老生常谈的问题，网上的总结也有很多，重要的不是总结，而是把所有的方法都尝试一遍。
+纸上得来终觉浅，绝知此事要躬行
+域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+
+
+
+URL
+说明
+是否允许通信
+
+
+
+
+http://www.a.com/a.js和http://www.a.com/b.js
+同一域名下
+允许
+
+
+http://www.a.com/lab/a.js和http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cross-domain Test">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/cross-domain Test/index.html">
+<meta property="og:site_name" content="了了">
+<meta property="og:description" content="写在开头老生常谈的问题，网上的总结也有很多，重要的不是总结，而是把所有的方法都尝试一遍。
+纸上得来终觉浅，绝知此事要躬行
+域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+
+
+
+URL
+说明
+是否允许通信
+
+
+
+
+http://www.a.com/a.js和http://www.a.com/b.js
+同一域名下
+允许
+
+
+http://www.a.com/lab/a.js和http">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/cross1.png">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/cross2.png">
+<meta property="og:image" content="http://7xiiua.com1.z0.glb.clouddn.com/cross3.png">
+<meta property="og:updated_time" content="2016-05-07T11:56:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cross-domain Test">
+<meta name="twitter:description" content="写在开头老生常谈的问题，网上的总结也有很多，重要的不是总结，而是把所有的方法都尝试一遍。
+纸上得来终觉浅，绝知此事要躬行
+域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+
+
+
+URL
+说明
+是否允许通信
+
+
+
+
+http://www.a.com/a.js和http://www.a.com/b.js
+同一域名下
+允许
+
+
+http://www.a.com/lab/a.js和http">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">了了</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">清醒时写码，心塞时跑步，糊涂时读书。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-cross-domain Test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      cross-domain Test
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2016-04-10T02:59:12.000Z" itemprop="datePublished">04-10-2016</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/code/">code</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="写在开头">写在开头</h2><p>老生常谈的问题，网上的总结也有很多，重要的不是总结，而是把所有的方法都尝试一遍。</p>
+<p>纸上得来终觉浅，绝知此事要躬行</p>
+<h2 id="域">域</h2><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>说明</th>
+<th>是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>同一域名下</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/lab/a.js</code>和<code>http://www.a.com/script/b.js</code></td>
+<td>同域名不同文件夹</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com:8000/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>同一域名，不同端口</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>https://www.a.com/b.js</code></td>
+<td>同一域名，不同协议</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://70.32.92.74/b.js</code></td>
+<td>域名和域名对应ip</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://script.a.com/b.js</code></td>
+<td>主域相同，子域不同</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><code>http://www.a.com/a.js</code>和<code>http://a.com/b.js</code></td>
+<td>同一域名，不同二级域名（同上）</td>
+<td>不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td><code>http://www.cnblogs.com/a.js</code>和<code>http://www.a.com/b.js</code></td>
+<td>不同域名</td>
+<td>不允许</td>
+</tr>
+</tbody>
+</table>
+<h2 id="跨域">跨域</h2><p>浏览器出于安全的考虑（避免恶意网站轻易读取其他网站显示的内容数据等）原则上允许跨域写而限制了跨域读。写是指数据的上行/发送( <code>sending request</code> )，读是指数据的下行/接受( <code>receiving response</code> )。</p>
+<a id="more"></a>
+<p>跨域在实际生产中可分为三类：</p>
+<ol>
+<li>与服务器端通信有跨域问题</li>
+<li>不同页面间的 <code>iframe</code> 通信会有跨域问题</li>
+<li>单点登录时的 <code>Cookie</code> 认证会有跨域问题</li>
+</ol>
+<h3 id="AJAX的跨域请求">AJAX的跨域请求</h3><p>这里用 <code>express</code> 模拟一个服务器(3000端口)，在其他端口通过 <code>AJAX</code> 向 <code>express</code> 发送 <code>GET</code> 请求，可以看到熟悉的错误信息：</p>
+<p><img src="http://7xiiua.com1.z0.glb.clouddn.com/cross1.png" alt="chrome"></p>
+<p><img src="http://7xiiua.com1.z0.glb.clouddn.com/cross2.png" alt="express"></p>
+<p><code>express</code> 服务器是可以收到 <code>GET</code> 请求的，只不过在 <code>response</code> 的时候被浏览器拦截。<br>（然而跨域写也是很不安全的，容易导致 <code>CSRF/clickjacking</code> 攻击。浏览器已经限制了跨域读，再限制跨域写的话，那网络上的每个页面都变成了孤岛）</p>
+<h3 id="iframe通信跨域">iframe通信跨域</h3><p>在做这个演示之前，需要本地模拟不同域环境</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 编辑/etc/hosts文件</span></span><br><span class="line"><span class="preprocessor"># 新增配置</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>  sub.a.com</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>  www.a.com</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>  www.b.com</span><br></pre></td></tr></table></figure>
+<p>先启动一个 <code>express</code> 服务器，用于模拟不同的域名环境以及静态资源调用，对 <code>iframe</code> 跨域尝试的所有 <code>demo</code> 都在 <a href="https://github.com/llfly/fly-master/tree/master/other/cross-domain" target="_blank" rel="external">这个仓库</a>，这里就不截图了。</p>
+<h3 id="单点登录时的_Cookie_跨域">单点登录时的 <code>Cookie</code> 跨域</h3><p>在 <code>Cookie</code> 相关文档信息中，提到过 <code>Cookie</code> 是不能跨域访问的，但是在二级域名是可以共享 <code>Cookie</code> 的。这样我们在开发多个项目并且想使用单点登录时就有了限制，必须将多个系统的域名统一，作为二级域名，统一平台提供使用主域名，这也算解决方案之一。</p>
+<p><code>Cookie</code> 信息跨域，暂时能想到三种方法：</p>
+<ol>
+<li>通过服务端提供一个获取当前域下所有 <code>Cookie</code> 的请求地址，服务端将获取的 <code>Cookie</code>转成 js 代码，在其他域下使用 <code>jsonp</code> 跨域加载该 js 代码。</li>
+<li><code>p3p</code> 协议<br><code>response.Header(&#39;P3P&#39;,&#39;CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR&#39;)</code><br>兼容性不是很好。</li>
+<li>通过 <code>URL</code> 参数实现 <code>token</code> 信息传递</li>
+</ol>
+<p>对单点登录的认识不够深刻，后面做单点登录时再重新总结。</p>
+<p>对于以上的跨域类型，特别注意的两点：</p>
+<ol>
+<li>对于端口和协议的不同，只能通过后台来解决。</li>
+<li>在跨域问题上，域仅仅是通过“URL 的首部”来识别，而不会去尝试判断相同的 <code>ip</code> 地址对应着两个域或两个域是否在同一个 <code>ip</code> 上。<br>“URL 的首部”指 <code>window.location.protocol</code> + <code>window.location.host</code></li>
+</ol>
+<h2 id="解决方案">解决方案</h2><h3 id="document-domain">document.domain</h3><p>对于主域相同而子域不同的例子，可以通过设置 <code>document.domain</code> 的办法来解决。</p>
+<p><code>document.domain</code> 默认的值是整个域名，所以即使两个域名的二级域名一样，那么他们的 <code>document.domain</code> 也不一样。</p>
+<p>使用方法就是将符合上述条件页面的 <code>document.domain</code> 设置为同样的二级域名。这样我们就可以使用其他页面的 <code>window</code> 对象引用做我们想做的任何事情了。</p>
+<p>具体的做法是可以在<code>http://www.a.com/main.html</code>和<code>http://sub.a.com/test1.html</code>两个文件中分别加上<code>document.domain = &#39;a.com&#39;;</code>然后通过<code>a.html</code>文件中创建一个<code>iframe</code>，去控制<code>iframe</code>的<code>contentDocument</code>，这样两个 js 文件之间就可以“交互”了。</p>
+<p>补充知识：</p>
+<p><code>x.one.example.com</code> 和 <code>y.one.example.com</code> 可以将 <code>document.domain</code> 设置为 <code>one.example.com</code>，也可以设置为 <code>example.com</code>。<br><code>document.domain</code> 只能设置为当前域名的一个后缀，并且包括二级域名或以上（<code>.edu.cn</code> 这种整个算顶级域名）。</p>
+<h3 id="Fragment_Identitier_Messaging（FIM）">Fragment Identitier Messaging（FIM）</h3><p>Fragment Identitier 就是URL的井号（#）后面的经常用于锚点定位的部分，这部分的改变不会导致页面刷新，母窗口可以随便访问 <code>iframe</code> 的 <code>URL</code>，而 <code>iframe</code> 也可以随便访问母窗口的 <code>URL</code>，那这二者之间就可以通过改变Fragmement Identitier来实现通信了。缺点是Fragmement Identitier的改变会产生不必要的历史记录，而且也有长度限制；另外，有的浏览器不支持 <code>onhashchange</code> 事件。</p>
+<p>还有一种变种是Cross Frame（CF），域间页面跳转，携带 <code>URL</code> 跳回到同域</p>
+<p>具体做法是在 <code>http://www.b.com/test2.html</code> 中将所需的数据拼在 <code>URL</code> 的后面，而这个 <code>URL</code> 指向的地址<code>http://www.a.com/sub_domain_pass.html</code>需要和想要获取数据的<code>http://www.a.com/main.html</code>同域，利用通域间可以自由通信来做数据传递。</p>
+<p>缺点：</p>
+<ol>
+<li>需要借助中间页面跳转，麻烦</li>
+<li>通过 <code>URL</code> 传递参数，直接暴露在外面，数据容量和类型都有限</li>
+</ol>
+<h3 id="HTML5_postMessage">HTML5 postMessage</h3><p>HTML5 新增了跨文档消息传输 <code>Cross Document Messaging</code>，<a href="http://caniuse.com/#search=postMessage" target="_blank" rel="external">兼容ie8以上</a></p>
+<p><code>otherWindow.postMessage(message, targetOrigin);</code></p>
+<ul>
+<li><code>otherWindow</code> : 对接收信息页面的 <code>window</code> 的引用<ul>
+<li>页面中 <code>iframe</code> 的 <code>contentWindow</code> 属性</li>
+<li><code>window.open</code> 的返回值</li>
+<li>通过 <code>name</code> 或下标从 <code>window.frames</code> 取到的值</li>
+</ul>
+</li>
+<li><code>message</code> : 所要发送的数据，<code>string</code> 类型</li>
+<li><code>targetOrigin</code> : 用于限制 <code>otherWindow</code>，“*”表示不作限制</li>
+</ul>
+<h3 id="document-name">document.name</h3><p>看以下一个场景：<br>随意打开一个页面，输入以下代码：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.<span class="property">name</span> = <span class="string">"hello,world"</span>;</span><br><span class="line">location.href = <span class="string">"http://www.baidu.com/"</span>;</span><br></pre></td></tr></table></figure>
+<p>再检测 <code>window.name</code> :</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.name; <span class="comment">// hello,world</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，如果在一个标签里面跳转网页的话，<code>window.name</code> 是不会改变的。<br>基于这个思想，我们可以在某个页面设置好 <code>window.name</code> 的值，然后跳转到另外一个页面。在这个页面中就可以获取到我们刚刚设置的 <code>window.name</code> 了。</p>
+<p>由于安全原因，浏览器始终会保持 <code>window.name</code> 是 <code>string</code> 类型。</p>
+<p>这个方法也可以应用到与 <code>&lt;iframe&gt;</code> 的交互上来。</p>
+<p>在页面<code>index.html</code>中内嵌了一个 <code>&lt;iframe id=&quot;iframe&quot; src=&quot;http://omg.com/iframe.html&quot;&gt;&lt;/iframe&gt;</code></p>
+<p>在 <code>iframe.html</code> 中设置好了 <code>window.name</code> 为我们要传递的字符串。<br>在 <code>index.html</code> 中写了下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    data = iframe.contentWindow.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可结果往往不如意，两个页面完全不同源。<br><img src="http://7xiiua.com1.z0.glb.clouddn.com/cross3.png" alt="跨域"></p>
+<p>由于 <code>window.name</code> 不随着 <code>URL</code> 的跳转而改变，可以使用一个黑科技来解决这个问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span><br><span class="line"><span class="keyword">var</span> data = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        data = iframe.contentWindow.name;</span><br><span class="line">    &#125;</span><br><span class="line">    iframe.src = <span class="string">'about:blank'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>或者将里面的 <code>about:blank</code> 替换成某个同源页面（最好是空页面，减少加载时间）。</p>
+<p>补充知识：<br><code>about:blank</code>，<code>javascript:</code> 和 <code>data:</code> 中的内容，继承了载入他们的页面的源。<br>这种方法与 <code>document.domain</code> 方法相比，放宽了域名后缀要相同的限制，可以从任意页面获取 <code>string</code> 类型的数据。</p>
+<h3 id="JSONP(json_with_padding填充式_json)">JSONP(<code>json with padding</code>填充式 json)</h3><p>看起来和<code>json</code>差不多，只不过是被包含在函数调用中的<code>json</code>。例如<code>callback({hello:&#39;world&#39;});</code></p>
+<p>我们知道，在页面上有三种资源是可以与页面本身不同源的。它们是：js脚本，css样式文件，图片。而 <code>jsonp</code> 就是利用了<code>&lt;script&gt;</code>标签可以链接到不同源的js脚本，来到达跨域目的。</p>
+<p>当链接的资源到达浏览器时，浏览器会根据他们的类型来采取不同的处理方式，比如，如果是 <code>css</code> 文件，则会进行对页面 <code>repaint</code> ，如果是 <code>img</code> 则会将图片渲染出来，如果是 <code>script</code> 脚本，则会进行执行。</p>
+<p>因此只要我们在请求页面定义回调函数，将 <code>json</code> 数据用函数名包装起来（形如函数调用），数据就传递给了原页面函数的形参。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求页面</span></span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(arg);</span><br><span class="line">&#125;</span><br><span class="line">script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line">script.src=<span class="string">'./test.js'</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line"></span><br><span class="line"><span class="comment">//跨域页面或后台接口返回</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">test(&#123;<span class="string">"data"</span>:<span class="number">123</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//依次打印 1 ,Object &#123;data: 123&#125; ,3</span></span><br></pre></td></tr></table></figure>
+<p>客户端在与服务端交互时，需要约定好回调函数名称，后端需要封装调用。但这种方式兼容性极好。<br><code>jsonp</code> 只能以 <code>GET</code> 的方式进行跨域，如果想用其他方式进行跨域，就需要使用 <code>CORS</code> 了。</p>
+<p>最后需要明确的一点是 <code>jsonp</code> 和 <code>AJAX</code> 原理完全不同，即使在 <code>jQuery</code> 的实现里，如果发现参数 <code>type</code> 为 <code>jsonp</code>，它内部也是通过创建 <code>script</code> 标签来请求数据。</p>
+<h3 id="CORS">CORS</h3><ol>
+<li>请求发起时，浏览器先判断当前是否是跨域的 <code>AJAX</code> 请求</li>
+<li>如果是，判断是否是简单请求<ul>
+<li>只使用 <code>GET</code>, <code>HEAD</code> 或者 <code>POST</code> 请求方法。如果使用 <code>POST</code> 向服务器端传送数据，则数据类型(<code>Content-Type</code>)只能是 <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code> 或 <code>text/plain</code> 中的一种。</li>
+<li>不会使用自定义请求头（类似于 <code>X-Modified</code> 这种）。</li>
+</ul>
+</li>
+<li>简单请求，直接发到服务端，在响应头中寻找 <code>Access-Control-Allow-Origin</code>，如果有且允许，处理响应结果。</li>
+<li>对那些会对服务器数据造成破坏性影响的 <code>HTTP</code> 请求方法（特别是 <code>GET</code> 以外的 <code>HTTP</code> 方法，或者搭配某些 <code>MIME</code> 类型的 <code>POST</code> 请求），标准强烈要求浏览器必须先以 <code>OPTIONS</code> 请求方式发送一个预请求(<code>preflight request</code>)，从而获知服务器端对跨源请求所支持 <code>HTTP</code> 方法。（要求服务端返回 <code>Access-Control-Allow-Methods</code> 和 <code>Access-Contorol-Allow-Headers</code>）</li>
+<li>在确认服务器允许该跨源请求的情况下，以实际的 <code>HTTP</code> 请求方法发送那个真正的请求。服务器端也可以通知客户端，是不是需要随同请求一起发送信用信息（包括 <code>Cookies</code> 和 <code>HTTP</code> 认证相关数据）。</li>
+</ol>
+<p><a href="http://caniuse.com/#search=CORS" target="_blank" rel="external">兼容性</a></p>
+<h3 id="图片ping">图片ping</h3><p>上面我们说过，在页面上有三种资源是可以与页面本身不同源的。它们是：js 脚本，css 样式文件，图片。利用完 js 脚本，我们试试图片。</p>
+<p>将图片的 <code>src</code> 属性指向请求的地址，通过监听 <code>load</code> 和 <code>error</code> 事件，就能知道响应什么时候接受了,响应的数据可以是任意内容，但通常是像素图或204响应。图像ping的例子如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.html</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'start'</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">	img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">document</span>.getElementById(<span class="string">'result'</span>).innerHTML = <span class="string">'已经加载'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	img.src = <span class="string">'http://localhost:3000/img/st.gif'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//app.js</span></span><br><span class="line">app.get(<span class="string">'/img/st.gif'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'get data'</span>);</span><br><span class="line">	res.send(&#123;</span><br><span class="line">		state:<span class="literal">true</span></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我们发现请求发送成功了，却没有获取响应文本。也就说他是单向通信。</p>
+<p>这种方式优点是很明显的：兼容性非常好<br>缺点就是：只能发生 <code>GET</code> 请求，而且无法获取响应文本。<br>因此在实际生产当中会在 <code>GET</code> 请求后面拼上特征字段，用来埋点，日志统计。</p>
+<h3 id="flash跨域">flash跨域</h3><p>它会访问目标网站根目录下面的 <code>crossdomain.xml</code> 文件，根据文件中的内容来确定是否允许此次跨域访问，基本没有人用了：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">cross-domain-policy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">allow-access-from</span> <span class="attribute">domain</span>=<span class="value">"xxx.xxx.com"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">cross-domain-policy</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="proxy">proxy</h3><p>后台<code>proxy</code>这种方案牵涉到后台配置，这里就不阐述了，有兴趣的可以看看 <code>yahoo</code> 的这篇文章：<a href="https://developer.yahoo.com/javascript/howto-proxy.html" target="_blank" rel="external">《JavaScript: Use a Web Proxy for Cross-Domain XMLHttpRequest Calls》</a></p>
+<h3 id="参考">参考</h3><p><a href="http://blog.jobbole.com/53487" target="_blank" rel="external">JavaScript 跨域总结与解决办法</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">Access_control_CORS</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/10/cross-domain Test/" data-id="cinx3camb001hl9fy2d7ma9v3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cross-domain/">cross-domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/01/Observer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Observer
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/22/aboutThis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About this</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 llfly<br>
+      Most people talk a lot , few are up for the moment .
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
